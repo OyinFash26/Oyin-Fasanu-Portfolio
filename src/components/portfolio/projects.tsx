@@ -64,15 +64,6 @@ const PROJECTS: Project[] = [
       "A data visualisation project exploring how complex information can be transformed into clear, understandable visual graphics.",
     tech: ["Data Visualisation", "Power BI"],
   },
-  {
-    number: "05",
-    category: "MSc Computing / Research",
-    title: "AI-Based Auditing for Corporate Accounting Fraud Detection",
-    description:
-      "An academic project exploring the potential application of artificial intelligence to identify patterns associated with corporate accounting fraud.",
-    tech: ["Artificial Intelligence", "Research"],
-    note: "Academic / research project",
-  },
 ];
 
 export function Projects() {
