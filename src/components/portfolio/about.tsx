@@ -23,10 +23,9 @@ export function About() {
       <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
         <Reveal className="space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg">
           <p>
-            I work where business logic meets technical logic. My career started in accounting and
-            financial services, where I spent my time inside internal controls, risk and compliance,
-            and investment management — the places where a small process gap quietly becomes an
-            expensive problem.
+           I’m a technology-focused professional with a background in accounting, financial services, 
+           risk and compliance, currently pursuing an{" "}
+           <span className="text-foreground">MSc Computing</span> at the University of Sunderland.
           </p>
           <p>
             That work taught me how organisations actually operate: how decisions get made, where
