@@ -30,6 +30,7 @@ const PROJECTS: Project[] = [
     description:
       "Responsive web development work demonstrating semantic HTML, CSS, responsive layouts and modern web design principles.",
     tech: ["HTML", "CSS"],
+    href: "http://localhost/gamestore2/index.html",
   },
   {
     number: "03",
