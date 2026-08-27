@@ -1,11 +1,26 @@
 import { Section } from "./section";
 import { Reveal } from "./reveal";
 
-const HIGHLIGHTS = [
-  { label: "Background", value: "Financial Services & Accounting" },
-  { label: "Currently", value: "MSc Computing" },
-  { label: "Focus", value: "Technology • Product • Business Analysis" },
-  { label: "Based in", value: "United Kingdom" },
+const CAREER_JOURNEY = [
+  {
+    number: "01",
+    label: "Where I started",
+    title: "Accounting & Financial Services",
+    detail: "Internal Controls • Risk • Compliance • Investment Management",
+  },
+  {
+    number: "02",
+    label: "Where I am",
+    title: "MSc Computing",
+    detail: "University of Sunderland",
+    current: true,
+  },
+  {
+    number: "03",
+    label: "Where I'm going",
+    title: "Technology • Product • Business Analysis",
+    detail: "Building practical technical and problem-solving skills.",
+  },
 ];
 
 const LENSES = [
@@ -53,14 +68,33 @@ export function About() {
             </div>
           </div>
 
-          <dl className="grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2">
-            {HIGHLIGHTS.map((item) => (
-              <div key={item.label} className="bg-card p-5">
-                <dt className="eyebrow">{item.label}</dt>
-                <dd className="mt-2 font-display text-sm font-semibold">{item.value}</dd>
-              </div>
+          <div className="relative grid gap-3 md:grid-cols-3 md:gap-5">
+            <div className="absolute left-[16.67%] right-[16.67%] top-6 hidden h-px bg-border md:block" />
+            {CAREER_JOURNEY.map((stage, index) => (
+              <Reveal key={stage.number} delay={180 + index * 100} className="relative h-full">
+                <div
+                  className={`group h-full border p-5 transition-colors duration-300 ${
+                    stage.current
+                      ? "border-accent bg-accent/[0.07]"
+                      : "border-border bg-card hover:border-accent/60"
+                  }`}
+                >
+                  <div
+                    className={`relative z-10 mx-auto flex h-3 w-3 items-center justify-center rounded-full border-2 bg-background transition-colors duration-300 ${
+                      stage.current ? "border-accent" : "border-border group-hover:border-accent"
+                    }`}
+                  >
+                    <span className={`h-1 w-1 rounded-full ${stage.current ? "bg-accent" : "bg-border"}`} />
+                  </div>
+                  <p className="eyebrow mt-5">
+                    {stage.number} — {stage.label}
+                  </p>
+                  <h3 className="mt-3 text-base font-semibold leading-snug">{stage.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{stage.detail}</p>
+                </div>
+              </Reveal>
             ))}
-          </dl>
+          </div>
         </Reveal>
       </div>
     </Section>
