@@ -9,6 +9,7 @@ type Project = {
   description: string;
   tech: string[];
   href?: string;
+  linkTitle?: string;
   designs?: { title: string; href: string }[];
   note?: string;
 };
@@ -31,6 +32,7 @@ const PROJECTS: Project[] = [
       "Responsive web development work demonstrating semantic HTML, CSS, responsive layouts and modern web design principles.",
     tech: ["HTML", "CSS"],
     href: "http://localhost/gamestore2/index.html",
+    linkTitle: "A Gamestore website",
   },
   {
     number: "03",
@@ -138,7 +140,7 @@ export function Projects() {
                   rel="noreferrer noopener"
                   className="inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-accent"
                 >
-                  View Project
+                  {project.linkTitle ? `View Project: ${project.linkTitle}` : "View Project"}
                   <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </a>
               ) : (
