@@ -15,7 +15,7 @@ const EDUCATION = [
 ];
 
 const CERTIFICATIONS = [
-  { title: "Product Design Certification", issuer: "" },
+  { title: "Product Design Certification", issuer: "I4GxZURI" },
   { title: "Responsive Web Design Certification", issuer: "freeCodeCamp" },
   { title: "Microsoft Certified: Security, Compliance, and Identity Fundamentals", issuer: "Microsoft" },
   { title: "Develop AI-Powered Prototypes in Google AI Studio", issuer: "Google" },
