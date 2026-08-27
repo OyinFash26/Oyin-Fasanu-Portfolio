@@ -9,6 +9,7 @@ type Project = {
   description: string;
   tech: string[];
   href?: string;
+  designs?: { title: string; href: string }[];
   note?: string;
 };
 
@@ -37,6 +38,20 @@ const PROJECTS: Project[] = [
     description:
       "A dashboard concept designed in Figma, focusing on information architecture, user experience, visual hierarchy and presenting complex information clearly.",
     tech: ["Figma"],
+    designs: [
+      {
+        title: "Railway Corporation Website & Mobile App Rebrand",
+        href: "https://www.figma.com/design/F7UvM4ms175VZlbJSWBWe2/Introduction-to-Figma--OyinFash?node-id=0-1&t=vn2leWfFeLn0YAh8-1",
+      },
+      {
+        title: "Agency Website",
+        href: "https://www.figma.com/proto/xyY4ZOqteUJqEg8fttPOxV/Mini-Project---OyinFash?node-id=0-1&t=MNJjHAba9dCj8110-1",
+      },
+      {
+        title: "Facility Mobile App Design",
+        href: "https://www.figma.com/design/VgcACdzHtGrJR0FmudtVNG/Project?node-id=0-1&t=H0MNGoQDDtUzWwxs-1",
+      },
+    ],
   },
   {
     number: "04",
@@ -100,7 +115,22 @@ export function Projects() {
             </ul>
 
             <div className="mt-8 pt-2">
-              {project.href ? (
+              {project.designs ? (
+                <div className="space-y-3">
+                  {project.designs.map((design) => (
+                    <a
+                      key={design.href}
+                      href={design.href}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="group/design inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-accent"
+                    >
+                      View Design: {design.title}
+                      <ArrowUpRight className="size-4 transition-transform duration-300 group-hover/design:translate-x-0.5 group-hover/design:-translate-y-0.5" />
+                    </a>
+                  ))}
+                </div>
+              ) : project.href ? (
                 <a
                   href={project.href}
                   target="_blank"
