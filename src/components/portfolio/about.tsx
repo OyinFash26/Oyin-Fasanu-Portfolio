@@ -28,16 +28,18 @@ export function About() {
            <span className="text-foreground">MSc Computing</span> at the University of Sunderland.
           </p>
           <p>
-            That work taught me how organisations actually operate: how decisions get made, where
-            processes break, and how to talk to the people who own them. I&apos;m now building the
-            technical half of that picture through an{" "}
-            <span className="text-foreground">MSc Computing at the University of Sunderland</span>,
-            alongside hands-on work in web development, data and product design.
+            I began my career in financial services, working across internal controls, risk, compliance 
+            and investment management. These roles gave me experience in understanding business processes, 
+            identifying problems, working with stakeholders and improving how processes operate.
           </p>
           <p>
-            The combination is the point. I can sit with a stakeholder, understand the real problem
-            behind the request, and then work with the people building the solution in language they
-            recognise.
+            I’m now building on that experience through computing, developing practical skills in web development, 
+            data visualisation and product design. I’m particularly interested in how technology can be used to solve 
+            real business and user problems.
+          </p>
+            <p>
+            My goal is to bring together my business understanding and growing technical skills to contribute to technology, 
+            product and business analysis projects.
           </p>
         </Reveal>
 
