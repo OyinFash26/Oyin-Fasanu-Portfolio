@@ -10,6 +10,7 @@ type Project = {
   tech: string[];
   href?: string;
   linkTitle?: string;
+  links?: { title: string; href: string }[];
   designs?: { title: string; href: string }[];
   note?: string;
 };
@@ -63,6 +64,16 @@ const PROJECTS: Project[] = [
     description:
       "A data visualisation project exploring how complex information can be transformed into clear, understandable visual graphics.",
     tech: ["Data Visualisation", "Power BI"],
+    links: [
+      {
+        title: "Visualize Data with a Scatterplot Graph",
+        href: "https://codepen.io/Oyinfash/pen/VwVqgPw",
+      },
+      {
+        title: "Visualize Data with a Bar Chart",
+        href: "https://codepen.io/Oyinfash/pen/BaqdvPa",
+      },
+    ],
   },
 ];
 
@@ -121,6 +132,21 @@ export function Projects() {
                     >
                       View Design: {design.title}
                       <ArrowUpRight className="size-4 transition-transform duration-300 group-hover/design:translate-x-0.5 group-hover/design:-translate-y-0.5" />
+                    </a>
+                  ))}
+                </div>
+              ) : project.links ? (
+                <div className="space-y-3">
+                  {project.links.map((link) => (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="group/link inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-accent"
+                    >
+                      View Project: {link.title}
+                      <ArrowUpRight className="size-4 transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
                     </a>
                   ))}
                 </div>
