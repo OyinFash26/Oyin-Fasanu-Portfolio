@@ -9,9 +9,6 @@ type Project = {
   description: string;
   tech: string[];
   href?: string;
-  linkTitle?: string;
-  links?: { title: string; href: string }[];
-  designs?: { title: string; href: string }[];
   note?: string;
 };
 
@@ -19,63 +16,44 @@ type Project = {
 const PROJECTS: Project[] = [
   {
     number: "01",
-    category: "Product Design",
-    title: "Product Design & UI/UX",
-    description:
-      "A dashboard concept designed in Figma, focusing on information architecture, user experience, visual hierarchy and presenting complex information clearly.",
-    tech: ["Figma"],
-    designs: [
-      {
-        title: "Railway Corporation Website & Mobile App Rebrand",
-        href: "https://www.figma.com/design/F7UvM4ms175VZlbJSWBWe2/Introduction-to-Figma--OyinFash?node-id=0-1&t=vn2leWfFeLn0YAh8-1",
-      },
-      {
-        title: "Agency Website",
-        href: "https://www.figma.com/proto/xyY4ZOqteUJqEg8fttPOxV/Mini-Project---OyinFash?node-id=0-1&t=MNJjHAba9dCj8110-1",
-      },
-      {
-        title: "Facility Mobile App Design",
-        href: "https://www.figma.com/design/VgcACdzHtGrJR0FmudtVNG/Project?node-id=0-1&t=H0MNGoQDDtUzWwxs-1",
-      },
-    ],
-  },
-  {
-    number: "02",
-    category: "Data & Analytics",
-    title: "Data Visualisation",
-    description:
-      "A data visualisation project exploring how complex information can be transformed into clear, understandable visual graphics.",
-    tech: ["JavaScript", "D3.js", "Data Visualisation"],
-    links: [
-      {
-        title: "Visualize Data with a Scatterplot Graph",
-        href: "https://codepen.io/Oyinfash/pen/VwVqgPw",
-      },
-      {
-        title: "Visualize Data with a Bar Chart",
-        href: "https://codepen.io/Oyinfash/pen/BaqdvPa",
-      },
-    ],
-  },
-  {
-    number: "03",
     category: "Web Development",
     title: "Personal Portfolio Website",
     description:
       "A responsive personal portfolio website designed and developed to showcase professional experience, technical skills and selected projects.",
     tech: ["HTML", "CSS", "JavaScript"],
-    href: "https://github.com/OyinFash26/Oyin-Fasanu-Portfolio",
-    linkTitle: "Personal Portfolio Website",
   },
   {
-    number: "04",
+    number: "02",
     category: "Web Development",
     title: "Responsive Web Design",
     description:
       "Responsive web development work demonstrating semantic HTML, CSS, responsive layouts and modern web design principles.",
     tech: ["HTML", "CSS"],
-    href: "http://localhost/gamestore2/index.html",
-    linkTitle: "A Gamestore website",
+  },
+  {
+    number: "03",
+    category: "Product Design",
+    title: "Product Design & Dashboard",
+    description:
+      "A dashboard concept designed in Figma, focusing on information architecture, user experience, visual hierarchy and presenting complex information clearly.",
+    tech: ["Figma"],
+  },
+  {
+    number: "04",
+    category: "Data & Analytics",
+    title: "Data Visualisation",
+    description:
+      "A data visualisation project exploring how complex information can be transformed into clear, understandable visual graphics.",
+    tech: ["Data Visualisation", "Power BI"],
+  },
+  {
+    number: "05",
+    category: "MSc Computing / Research",
+    title: "AI-Based Auditing for Corporate Accounting Fraud Detection",
+    description:
+      "An academic project exploring the potential application of artificial intelligence to identify patterns associated with corporate accounting fraud.",
+    tech: ["Artificial Intelligence", "Research"],
+    note: "Academic / research project",
   },
 ];
 
@@ -122,44 +100,14 @@ export function Projects() {
             </ul>
 
             <div className="mt-8 pt-2">
-              {project.designs ? (
-                <div className="space-y-3">
-                  {project.designs.map((design) => (
-                    <a
-                      key={design.href}
-                      href={design.href}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      className="group/design inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-accent"
-                    >
-                      View Design: {design.title}
-                      <ArrowUpRight className="size-4 transition-transform duration-300 group-hover/design:translate-x-0.5 group-hover/design:-translate-y-0.5" />
-                    </a>
-                  ))}
-                </div>
-              ) : project.links ? (
-                <div className="space-y-3">
-                  {project.links.map((link) => (
-                    <a
-                      key={link.href}
-                      href={link.href}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      className="group/link inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-accent"
-                    >
-                      View Project: {link.title}
-                      <ArrowUpRight className="size-4 transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
-                    </a>
-                  ))}
-                </div>
-              ) : project.href ? (
+              {project.href ? (
                 <a
                   href={project.href}
                   target="_blank"
                   rel="noreferrer noopener"
                   className="inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-accent"
                 >
-                  {project.linkTitle ? `View Project: ${project.linkTitle}` : "View Project"}
+                  View Project
                   <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </a>
               ) : (

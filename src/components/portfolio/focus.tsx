@@ -5,17 +5,17 @@ const CARDS = [
   {
     number: "01",
     title: "Technology",
-    body: "Building practical software projects and strengthening my technical foundation through hands-on work.",
+    body: "Building stronger technical skills and developing practical software projects.",
   },
   {
     number: "02",
     title: "Product",
-    body: "Turning user and business needs into useful, intuitive digital solutions.",
+    body: "Learning how technology can solve real user and business problems.",
   },
   {
     number: "03",
     title: "Business Analysis",
-    body: "Combining my financial-services experience with technical understanding to translate business problems into effective solutions.",
+    body: "Combining business knowledge with technical understanding to translate problems into effective solutions.",
   },
 ];
 

@@ -53,7 +53,7 @@ export function Navbar() {
         className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6 md:h-20"
       >
         <a href="#home" className="font-display text-sm font-bold tracking-[0.22em] uppercase">
-          Oyin Fasanu
+          Oyin Fash
         </a>
 
         <ul className="hidden items-center gap-7 lg:flex">
