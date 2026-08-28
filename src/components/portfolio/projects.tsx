@@ -19,26 +19,6 @@ type Project = {
 const PROJECTS: Project[] = [
   {
     number: "01",
-    category: "Web Development",
-    title: "Personal Portfolio Website",
-    description:
-      "A responsive personal portfolio website designed and developed to showcase professional experience, technical skills and selected projects.",
-    tech: ["HTML", "CSS", "JavaScript"],
-    href: "https://github.com/OyinFash26/Oyin-Fasanu-Portfolio",
-    linkTitle: "Personal Portfolio Website",
-  },
-  {
-    number: "02",
-    category: "Web Development",
-    title: "Responsive Web Design",
-    description:
-      "Responsive web development work demonstrating semantic HTML, CSS, responsive layouts and modern web design principles.",
-    tech: ["HTML", "CSS"],
-    href: "http://localhost/gamestore2/index.html",
-    linkTitle: "A Gamestore website",
-  },
-  {
-    number: "03",
     category: "Product Design",
     title: "Product Design & UI/UX",
     description:
@@ -60,7 +40,7 @@ const PROJECTS: Project[] = [
     ],
   },
   {
-    number: "04",
+    number: "02",
     category: "Data & Analytics",
     title: "Data Visualisation",
     description:
@@ -76,6 +56,26 @@ const PROJECTS: Project[] = [
         href: "https://codepen.io/Oyinfash/pen/BaqdvPa",
       },
     ],
+  },
+  {
+    number: "03",
+    category: "Web Development",
+    title: "Personal Portfolio Website",
+    description:
+      "A responsive personal portfolio website designed and developed to showcase professional experience, technical skills and selected projects.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    href: "https://github.com/OyinFash26/Oyin-Fasanu-Portfolio",
+    linkTitle: "Personal Portfolio Website",
+  },
+  {
+    number: "04",
+    category: "Web Development",
+    title: "Responsive Web Design",
+    description:
+      "Responsive web development work demonstrating semantic HTML, CSS, responsive layouts and modern web design principles.",
+    tech: ["HTML", "CSS"],
+    href: "http://localhost/gamestore2/index.html",
+    linkTitle: "A Gamestore website",
   },
 ];
 
