@@ -24,6 +24,8 @@ const PROJECTS: Project[] = [
     description:
       "A responsive personal portfolio website designed and developed to showcase professional experience, technical skills and selected projects.",
     tech: ["HTML", "CSS", "JavaScript"],
+    href: "https://github.com/OyinFash26/Oyin-Fasanu-Portfolio",
+    linkTitle: "Personal Portfolio Website",
   },
   {
     number: "02",
