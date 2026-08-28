@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="border-t border-border py-12">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-6 md:flex-row md:items-end md:justify-between">
         <div>
-          <p className="font-display text-sm font-bold tracking-[0.22em] uppercase">Oyin Fash</p>
+          <p className="font-display text-sm font-bold tracking-[0.22em] uppercase">Oyin Fasanu</p>
           <p className="mt-2 text-sm text-muted-foreground">
             Technology • Product • Business Analysis
           </p>
@@ -39,7 +39,7 @@ export function Footer() {
       </div>
       <div className="mx-auto mt-8 w-full max-w-6xl px-6">
         <p className="border-t border-border pt-6 text-xs text-muted-foreground">
-          © 2026 Oyin Fash. All rights reserved.
+          © 2026 Oyin Fasanu. All rights reserved.
         </p>
       </div>
     </footer>

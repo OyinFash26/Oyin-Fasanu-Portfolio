@@ -1,8 +1,8 @@
 # Oyin Connect
 
-Personal Portfolio Website — Oyin Fash
+Personal Portfolio Website — Oyin Fasanu
 
-Build a modern, premium, professional personal portfolio website for Oyin Fash, a technology-focused professional currently pursuing an MSc Computing at the University of Sunderland.
+Build a modern, premium, professional personal portfolio website for Oyin Fasanu, a technology-focused professional currently pursuing an MSc Computing at the University of Sunderland.
 
 The website should position Oyin as a professional transitioning from financial services, accounting, risk and compliance into technology, product, business analysis and digital roles.
 
@@ -62,7 +62,7 @@ Navigation
 
 Create a sticky navigation bar containing:
 
-OYIN FASH
+OYIN FASANU
 
 Navigation links:
 
@@ -90,7 +90,7 @@ Create a visually striking hero section.
 
 Display:
 
-OYIN FASH
+OYIN FASANU
 
 Main headline:
 
@@ -461,7 +461,7 @@ Create a minimal footer.
 
 Display:
 
-OYIN FASH
+OYIN FASANU
 
 Technology • Product • Business Analysis
 
@@ -475,7 +475,7 @@ Email
 
 Add:
 
-© 2026 Oyin Fash. All rights reserved.
+© 2026 Oyin Fasanu. All rights reserved.
 
 INTERACTION & UX REQUIREMENTS
 

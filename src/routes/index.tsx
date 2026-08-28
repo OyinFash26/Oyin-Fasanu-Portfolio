@@ -11,9 +11,9 @@ import { Focus } from "@/components/portfolio/focus";
 import { Contact } from "@/components/portfolio/contact";
 import { Footer } from "@/components/portfolio/footer";
 
-const TITLE = "Oyin Fash — Technology, Product & Business Analysis";
+const TITLE = "Oyin Fasanu — Technology, Product & Business Analysis";
 const DESCRIPTION =
-  "Portfolio of Oyin Fash: MSc Computing student with a financial services, risk and compliance background, building towards technology, product and business analysis roles.";
+  "Portfolio of Oyin Fasanu: MSc Computing student with a financial services, risk and compliance background, building towards technology, product and business analysis roles.";
 
 export const Route = createFileRoute("/")({
   head: () => ({

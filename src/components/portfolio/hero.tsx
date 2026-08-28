@@ -19,7 +19,7 @@ export function Hero() {
             </span>
           </div>
 
-          <p className="eyebrow mt-8">Oyin Fash</p>
+          <p className="eyebrow mt-8">Oyin Fasanu</p>
           <h1 className="mt-4 max-w-3xl text-4xl leading-[1.05] font-semibold sm:text-5xl md:text-6xl lg:text-[4.25rem]">
             Building at the intersection of technology, business{" "}
             <span className="text-accent">&amp;</span> people.
