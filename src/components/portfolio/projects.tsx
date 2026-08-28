@@ -65,7 +65,7 @@ const PROJECTS: Project[] = [
     title: "Data Visualisation",
     description:
       "A data visualisation project exploring how complex information can be transformed into clear, understandable visual graphics.",
-    tech: ["Data Visualisation", "Power BI"],
+    tech: ["JavaScript", "D3.js", "Data Visualisation"],
     links: [
       {
         title: "Visualize Data with a Scatterplot Graph",
