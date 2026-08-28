@@ -38,7 +38,7 @@ const PROJECTS: Project[] = [
   {
     number: "03",
     category: "Product Design",
-    title: "Product Design & Dashboard",
+    title: "Product Design & UI/UX",
     description:
       "A dashboard concept designed in Figma, focusing on information architecture, user experience, visual hierarchy and presenting complex information clearly.",
     tech: ["Figma"],
