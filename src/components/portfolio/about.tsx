@@ -19,7 +19,7 @@ const PROFILE_SNAPSHOT = [
 
 const LENSES = [
   "Business problems",
-  "Controls & risk",
+  "Controls & Risk",
   "Requirements",
   "Data",
   "Product thinking",
