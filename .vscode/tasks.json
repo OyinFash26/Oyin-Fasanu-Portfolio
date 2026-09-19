@@ -1,0 +1,32 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Portfolio: commit and push",
+      "type": "shell",
+      "command": "if (-not (git status --porcelain)) { Write-Host 'No changes to commit.'; exit 0 }; git add .; git commit -m \"Update portfolio\"; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; git push origin main",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": false
+      }
+    },
+    {
+      "label": "Portfolio: build",
+      "type": "shell",
+      "command": "npm.cmd run build",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    }
+  ]
+}
