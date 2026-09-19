@@ -17,7 +17,7 @@ const EDUCATION = [
 const CERTIFICATIONS = [
   { title: "Develop AI-Powered Prototypes in Google AI Studio", issuer: "Google" },
   { title: "Microsoft Certified: Security, Compliance, and Identity Fundamentals", issuer: "Microsoft" },
-  { title: "Product Design Certification", issuer: "" },
+  { title: "Product Design Certification", issuer: "I4G x Zuri" },
   { title: "Responsive Web Design Certification", issuer: "freeCodeCamp" },
   { title: "Network Security Fundamentals", issuer: "BitDegree" },
   { title: "AML/CFT & CPF Compliance Training", issuer: "DataPro Limited" },
