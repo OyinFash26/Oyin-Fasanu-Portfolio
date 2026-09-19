@@ -23,8 +23,18 @@ const PROJECTS: Project[] = [
       "A collection of product and interface explorations focused on user flow, strategic thinking, visual clarity and practical design decisions.",
     tech: ["Figma", "UI/UX", "Design Systems"],
     designs: [
-      { label: "Agency Website", href: "https://www.figma.com/" },
-      { label: "Facility Management Mobile App", href: "https://www.figma.com/" },
+      {
+        label: "Railway Corporation Website & Mobile App Rebrand",
+        href: "https://www.figma.com/design/F7UvM4ms175VZlbJSWBWe2/Introduction-to-Figma--OyinFash?node-id=0-1&t=vn2leWfFeLn0YAh8-1",
+      },
+      {
+        label: "Agency Website",
+        href: "https://www.figma.com/proto/xyY4ZOqteUJqEg8fttPOxV/Mini-Project---OyinFash?node-id=0-1&t=MNJjHAba9dCj8110-1",
+      },
+      {
+        label: "Facility Management Mobile App Design",
+        href: "https://www.figma.com/design/VgcACdzHtGrJR0FmudtVNG/Project?node-id=0-1&t=H0MNGoQDDtUzWwxs-1",
+      },
     ],
   },
   {
@@ -34,8 +44,16 @@ const PROJECTS: Project[] = [
     description:
       "A data visualisation project exploring how complex information can be transformed into clear, understandable visual insights.",
     tech: ["JavaScript", "D3.js", "Data Visualisation"],
-    href: "https://codepen.io/",
-    links: [{ label: "View Visualisation", href: "https://codepen.io/" }],
+    links: [
+      {
+        label: "Visualize Data with a Scatterplot Graph",
+        href: "https://codepen.io/Oyinfash/pen/VwVqgPw",
+      },
+      {
+        label: "Visualize Data with a Bar Chart",
+        href: "https://codepen.io/Oyinfash/pen/BaqdvPa",
+      },
+    ],
   },
   {
     number: "03",
@@ -54,8 +72,7 @@ const PROJECTS: Project[] = [
     description:
       "Responsive web development work demonstrating semantic HTML, CSS, accessible layouts and thoughtful, user-centred design decisions.",
     tech: ["HTML", "CSS", "Responsive Design"],
-    href: "https://example.com",
-    links: [{ label: "View Project", href: "https://example.com" }],
+    links: [{ label: "View Project: A Gamestore website", href: "http://localhost/gamestore2/index.html" }],
   },
 ];
 
