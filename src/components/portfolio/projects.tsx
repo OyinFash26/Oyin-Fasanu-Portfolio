@@ -24,7 +24,7 @@ const PROJECTS: Project[] = [
     tech: ["Figma", "UI/UX", "Design Systems"],
     designs: [
       { label: "Agency Website", href: "https://www.figma.com/" },
-      { label: "Facility Mobile App", href: "https://www.figma.com/" },
+      { label: "Facility Management Mobile App", href: "https://www.figma.com/" },
     ],
   },
   {
