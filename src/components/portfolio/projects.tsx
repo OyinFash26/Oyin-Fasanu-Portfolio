@@ -10,50 +10,52 @@ type Project = {
   tech: string[];
   href?: string;
   note?: string;
+  links?: Array<{ label: string; href: string }>;
+  designs?: Array<{ label: string; href: string }>;
 };
 
-// Replace `href` with real project links when available.
 const PROJECTS: Project[] = [
   {
     number: "01",
-    category: "Web Development",
-    title: "Personal Portfolio Website",
+    category: "Product Design",
+    title: "Product Design & UI/UX",
     description:
-      "A responsive personal portfolio website designed and developed to showcase professional experience, technical skills and selected projects.",
-    tech: ["HTML", "CSS", "JavaScript"],
+      "A collection of product and interface explorations focused on user flow, strategic thinking, visual clarity and practical design decisions.",
+    tech: ["Figma", "UI/UX", "Design Systems"],
+    designs: [
+      { label: "Agency Website", href: "https://www.figma.com/" },
+      { label: "Facility Mobile App", href: "https://www.figma.com/" },
+    ],
   },
   {
     number: "02",
-    category: "Web Development",
-    title: "Responsive Web Design",
-    description:
-      "Responsive web development work demonstrating semantic HTML, CSS, responsive layouts and modern web design principles.",
-    tech: ["HTML", "CSS"],
-  },
-  {
-    number: "03",
-    category: "Product Design",
-    title: "Product Design & Dashboard",
-    description:
-      "A dashboard concept designed in Figma, focusing on information architecture, user experience, visual hierarchy and presenting complex information clearly.",
-    tech: ["Figma"],
-  },
-  {
-    number: "04",
     category: "Data & Analytics",
     title: "Data Visualisation",
     description:
-      "A data visualisation project exploring how complex information can be transformed into clear, understandable visual graphics.",
-    tech: ["Data Visualisation", "Power BI"],
+      "A data visualisation project exploring how complex information can be transformed into clear, understandable visual insights.",
+    tech: ["JavaScript", "D3.js", "Data Visualisation"],
+    href: "https://codepen.io/",
+    links: [{ label: "View Visualisation", href: "https://codepen.io/" }],
   },
   {
-    number: "05",
-    category: "MSc Computing / Research",
-    title: "AI-Based Auditing for Corporate Accounting Fraud Detection",
+    number: "03",
+    category: "Web Development",
+    title: "Personal Portfolio Website",
     description:
-      "An academic project exploring the potential application of artificial intelligence to identify patterns associated with corporate accounting fraud.",
-    tech: ["Artificial Intelligence", "Research"],
-    note: "Academic / research project",
+      "A responsive portfolio site designed and developed to showcase experience, projects and technical work in a clear editorial style.",
+    tech: ["React", "TypeScript", "Tailwind"],
+    href: "https://github.com/OyinFash26/Oyin-Fasanu-Portfolio",
+    links: [{ label: "GitHub Repository", href: "https://github.com/OyinFash26/Oyin-Fasanu-Portfolio" }],
+  },
+  {
+    number: "04",
+    category: "Web Development",
+    title: "Responsive Web Design",
+    description:
+      "Responsive web development work demonstrating semantic HTML, CSS, accessible layouts and thoughtful, user-centred design decisions.",
+    tech: ["HTML", "CSS", "Responsive Design"],
+    href: "https://example.com",
+    links: [{ label: "View Project", href: "https://example.com" }],
   },
 ];
 
@@ -84,9 +86,7 @@ export function Projects() {
                 {project.note}
               </span>
             ) : null}
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              {project.description}
-            </p>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{project.description}</p>
 
             <ul className="mt-6 flex flex-wrap gap-2">
               {project.tech.map((t) => (
@@ -99,8 +99,34 @@ export function Projects() {
               ))}
             </ul>
 
-            <div className="mt-8 pt-2">
-              {project.href ? (
+            <div className="mt-8 flex flex-wrap items-center gap-3 pt-2">
+              {project.designs?.map((design) => (
+                <a
+                  key={design.label}
+                  href={design.href}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-accent"
+                >
+                  {design.label}
+                  <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </a>
+              ))}
+
+              {project.links?.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-accent"
+                >
+                  {link.label}
+                  <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </a>
+              ))}
+
+              {!project.links?.length && !project.designs?.length && project.href ? (
                 <a
                   href={project.href}
                   target="_blank"
@@ -110,19 +136,7 @@ export function Projects() {
                   View Project
                   <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </a>
-              ) : (
-                <button
-                  type="button"
-                  disabled
-                  title="Project link coming soon"
-                  className="inline-flex cursor-not-allowed items-center gap-2 text-sm font-medium text-muted-foreground"
-                >
-                  View Project
-                  <span className="font-mono text-[0.625rem] tracking-wider uppercase">
-                    Link coming soon
-                  </span>
-                </button>
-              )}
+              ) : null}
             </div>
           </Reveal>
         ))}
