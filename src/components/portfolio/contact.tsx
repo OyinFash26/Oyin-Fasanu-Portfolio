@@ -5,13 +5,16 @@ import { Reveal } from "./reveal";
 const EMAIL = "oyinfasanu@gmail.com";
 const LINKEDIN = "https://www.linkedin.com/in/oyinkansola-kola-fasanu-b6a9001b7";
 const GITHUB = "https://github.com/OyinFash26";
+// FormSubmit delivers form posts to this inbox; no account needed (first submission sends an activation email).
+const FORM_ENDPOINT = `https://formsubmit.co/ajax/${EMAIL}`;
 
 type Errors = { name?: string; email?: string; message?: string };
 
 export function Contact() {
   const [values, setValues] = useState({ name: "", email: "", message: "" });
   const [errors, setErrors] = useState<Errors>({});
-  const [status, setStatus] = useState<"idle" | "success">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [honey, setHoney] = useState("");
 
   const set = (key: keyof typeof values) => (value: string) => {
     setValues((v) => ({ ...v, [key]: value }));
@@ -19,7 +22,7 @@ export function Contact() {
     setStatus("idle");
   };
 
-  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const next: Errors = {};
     if (!values.name.trim()) next.name = "Please enter your name.";
@@ -34,12 +37,29 @@ export function Contact() {
       return;
     }
 
-    // Placeholder submission: opens the user's mail client until a backend is connected.
-    const subject = encodeURIComponent(`Portfolio enquiry from ${values.name}`);
-    const body = encodeURIComponent(`${values.message}\n\n— ${values.name} (${values.email})`);
-    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
-    setStatus("success");
-    setValues({ name: "", email: "", message: "" });
+    setStatus("sending");
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: values.name,
+          email: values.email,
+          message: values.message,
+          _subject: `Portfolio enquiry from ${values.name}`,
+          _replyto: values.email,
+          _template: "table",
+          _captcha: "false",
+          _honey: honey,
+        }),
+      });
+      const data = (await response.json().catch(() => ({}))) as { success?: string | boolean };
+      if (!response.ok || String(data.success) !== "true") throw new Error("Send failed");
+      setStatus("success");
+      setValues({ name: "", email: "", message: "" });
+    } catch {
+      setStatus("error");
+    }
   };
 
   const field =
@@ -123,17 +143,39 @@ export function Contact() {
               ) : null}
             </div>
 
+            {/* Honeypot: hidden from people, filled in by spam bots. */}
+            <input
+              type="text"
+              name="_honey"
+              value={honey}
+              onChange={(e) => setHoney(e.target.value)}
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              className="hidden"
+            />
+
             <button
               type="submit"
-              className="inline-flex rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground transition-colors duration-300 hover:bg-accent hover:text-accent-foreground"
+              disabled={status === "sending"}
+              className="inline-flex rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground transition-colors duration-300 hover:bg-accent hover:text-accent-foreground disabled:opacity-60"
             >
-              Send Message
+              {status === "sending" ? "Sending…" : "Send Message"}
             </button>
 
             <p aria-live="polite" className="min-h-5 text-sm">
               {status === "success" ? (
                 <span className="text-accent">
-                  Thanks — your email draft is ready to send. I&apos;ll reply as soon as I can.
+                  Thanks — your message has been sent. I&apos;ll reply as soon as I can.
+                </span>
+              ) : null}
+              {status === "error" ? (
+                <span className="text-destructive">
+                  Sorry, your message couldn&apos;t be sent. Please email me directly at{" "}
+                  <a href={`mailto:${EMAIL}`} className="underline">
+                    {EMAIL}
+                  </a>
+                  .
                 </span>
               ) : null}
             </p>
